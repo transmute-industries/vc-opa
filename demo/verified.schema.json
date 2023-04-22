@@ -1,0 +1,168 @@
+{
+  "credential": {
+    "@context": [
+      "https://www.w3.org/ns/credentials/v2",
+      "https://w3id.org/vc/status-list/2021/v1"
+    ],
+    "credentialSchema": {
+      "id": "https://vendor.example/schemas/credential.yaml",
+      "type": "JsonSchema"
+    },
+    "credentialStatus": {
+      "id": "https://vendor.example/credentials/status/3#4",
+      "statusListCredential": "https://vendor.example/credentials/status/3",
+      "statusListIndex": "4",
+      "statusPurpose": "suspension",
+      "type": "StatusList2021Entry"
+    },
+    "credentialSubject": {
+      "claimName": "claimValue",
+      "id": "did:example:456",
+      "type": [
+        "Person",
+        "JobType"
+      ]
+    },
+    "id": "http://vendor.example/credentials/1776",
+    "issuer": {
+      "id": "did:jwk:eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwiYWxnIjoiRVMyNTYiLCJ4IjoiTVl2bmFJODdwZnJuM0ZwVHFXLXlOaUZjRjFLN2ZlZEppcWFwbTIwX3E3YyIsInkiOiI5WUViVDZUeXVjN3hwOXlSdmhPVVZLS19OSUhrbjVIcEs5Wk1ndks1cFZ3In0",
+      "type": [
+        "Organization",
+        "OrganizationType"
+      ]
+    },
+    "type": [
+      "VerifiableCredential",
+      "NewCredentialType"
+    ],
+    "validFrom": "2010-01-01T19:23:24Z"
+  },
+  "schema": {
+    "$id": "https://vendor.example/schemas/credential.yaml",
+    "additionalProperties": false,
+    "description": "An example verifiable credential with status and schema.",
+    "example": "{\n  \"@context\": [\n    \"https://www.w3.org/ns/credentials/v2\",\n    \"https://w3id.org/vc/status-list/2021/v1\"\n  ],\n  \"id\": \"http://vendor.example/credentials/1776\",\n  \"type\": [\"VerifiableCredential\", \"NewCredentialType\"],\n  \"issuer\": {\n    \"id\": \"did:example:123\",\n    \"type\": [\"Organization\", \"OrganizationType\"]\n  },\n  \"validFrom\": \"2010-01-01T19:23:24Z\",\n  \"credentialSchema\": {\n    \"id\": \"https://vendor.example/schemas/credential.yaml\",\n    \"type\": \"JsonSchema\"\n  },\n  \"credentialStatus\": {\n    \"id\": \"https://vendor.example/credentials/status/3#4\",\n    \"type\": \"StatusList2021Entry\",\n    \"statusPurpose\": \"suspension\",\n    \"statusListIndex\": \"4\",\n    \"statusListCredential\": \"https://vendor.example/credentials/status/3\"\n  },\n  \"credentialSubject\": {\n    \"id\": \"did:example:456\",\n    \"type\": [\"Person\", \"JobType\"],\n    \"claimName\": \"claimValue\"\n  }\n}",
+    "properties": {
+      "@context": {
+        "const": [
+          "https://www.w3.org/ns/credentials/v2",
+          "https://w3id.org/vc/status-list/2021/v1"
+        ],
+        "type": "array"
+      },
+      "credentialSchema": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "const": "JsonSchema",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "credentialStatus": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "statusListCredential": {
+            "type": "string"
+          },
+          "statusListIndex": {
+            "type": "string"
+          },
+          "statusPurpose": {
+            "type": "string"
+          },
+          "type": {
+            "const": "StatusList2021Entry",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "credentialSubject": {
+        "properties": {
+          "claimName": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "const": [
+              "Person",
+              "JobType"
+            ],
+            "default": [
+              "Person",
+              "JobType"
+            ],
+            "readOnly": true,
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "id": {
+        "type": "string"
+      },
+      "issuer": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "const": [
+              "Organization",
+              "OrganizationType"
+            ],
+            "default": [
+              "Organization",
+              "OrganizationType"
+            ],
+            "readOnly": true,
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "type": {
+        "const": [
+          "VerifiableCredential",
+          "NewCredentialType"
+        ],
+        "default": [
+          "VerifiableCredential",
+          "NewCredentialType"
+        ],
+        "items": {
+          "enum": [
+            "VerifiableCredential",
+            "NewCredentialType"
+          ],
+          "type": "string"
+        },
+        "readOnly": true,
+        "type": "array"
+      },
+      "validFrom": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "@context",
+      "id",
+      "type",
+      "issuer",
+      "validFrom",
+      "credentialSchema",
+      "credentialStatus",
+      "credentialSubject"
+    ],
+    "title": "Example Credential",
+    "type": "object"
+  }
+}

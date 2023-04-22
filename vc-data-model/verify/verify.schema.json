@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://transmute-industries.github.io/vc-opa/schemas/verified.json",
+  "type": "object",
+  "title": "OPA Verified Credential",
+  "description": "The result of applying verify.rego",
+  "required": ["verified", "protectedHeader", "payload"],
+  "properties": {
+    "verified": {
+      "$id": "#/properties/verified",
+      "type": "boolean",
+      "title": "Verified",
+      "description": "Signature verification"
+    },
+    "protectedHeader": {
+      "$id": "#/properties/protectedHeader",
+      "type": "object",
+      "title": "Protected Header",
+      "description": "The protected header from the verified json web token",
+      "additionalItems": true
+    },
+    "payload": {
+      "$id": "#/properties/payload",
+      "type": "object",
+      "title": "Payload",
+      "description": "The payload of the verified json web token",
+      "additionalItems": true
+    }
+  },
+  "additionalProperties": false
+}
