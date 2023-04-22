@@ -1,4 +1,4 @@
-# vc opa
+# Decentralize Open Policy Agent (DOPA)
 
 [![CI](https://github.com/transmute-industries/vc-opa/actions/workflows/ci.yml/badge.svg)](https://github.com/transmute-industries/vc-opa/actions/workflows/ci.yml)
 
